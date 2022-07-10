@@ -30,6 +30,17 @@ function useTeamPageData (teamId) {
 export default function TeamPage () {
     const { teamId } = useParams()
 
+    const {
+        teamNames,
+        articles,
+        team,
+        loading
+    } = useTeamPageData(teamId)
+
+    if(loading) {
+        return <p>LOADING</p>
+    }
+
     return (
         <div>
             Team page for {teamId}
